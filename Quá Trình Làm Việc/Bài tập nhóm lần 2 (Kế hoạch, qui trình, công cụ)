@@ -1,0 +1,129 @@
+ĐẠI HỌC QUỐC GIA TP.HỒ CHÍ MINH
+TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN
+
+ 
+
+
+
+
+KẾ HOẠCH, QUY TRÌNH PHÁT TRIỂN ĐỒ ÁN CỦA NHÓM
+
+
+
+
+
+Sinh viên thực hiện:
+STT	Họ tên	MSSV
+1	Đỗ Nguyễn Hoàng Huy	19521603
+2		
+3		
+4		
+
+
+TP. HỒ CHÍ MINH – 5/2020 
+Mục lục
+1. Kế hoạch phát triển	2
+2. Quy trình phát triển đồ án của nhóm	2
+3. Công cụ (CASE TOOL) hỗ trợ trong suốt quá trình quản lý công việc	5
+PHỤ LỤC PHÂN CÔNG NHIỆM VỤ	6
+
+ 
+1.	Kế hoạch phát triển
+2. 	Quy trình phát triển đồ án của nhóm
+Với đồ án xây dựng phần mềm quản lý thư viện, nhóm quyết định sử dụng mô hình chữ V vì:
+Dễ sử dụng, hoạt động tốt với những dự án có quy mô nhỏ
+Dễ quản lý vì mỗi giai đoạn có các mục tiêu và các mục tiêu được xác định rõ ràng
+Toàn bộ quy trình được chia thành 2 nhóm giai đoạn bao gồm phát triển và kiểm thử vận hành song song, tiết kiệm được thời gian.
+Dự án của nhóm có rất ít thay đổi về mặt yêu cầu, vì thế đã khắc phục được nhược điểm của mô hình chữ V
+Cụ thể quy trình làm việc của nhóm như sau:
+Khảo sát hiện trạng và đặc tả yêu cầu: 
+đề ra kế hoạch, phương pháp khảo sát, thu thập và làm tài liệu khảo sát về hiện trạng tổ chức tin học, nghiệp vụ. Xây dựng tài liệu đặc tả ( Thông tin chung, chức năng, dòng sự kiện, ghi chú (nếu có), DFD)
++	Hoạt động xác minh: Đánh giá yêu cầu
++	Hoạt động xác nhận: Tạo test case đầu ra cần có
+Thiết kế kiến trúc: 
+Xây dựng mô hình quan hệ ERD, thiết kế CSDL, luồng dữ liệu, tính khả thi về mặt kỹ thuật, các module, mối quan hệ và sự phụ thuộc, sơ đồ kiến trúc và chi tiết về công nghệ
++	Hoạt động xác minh: Đánh giá thiết kế
++	Hoạt động xác nhận: Tạo test plan và test case
++	Đầu ra cần có: tài liệu thiết kế CSDL, ERD, testplan, test case cho hệ thống
+Thiết kế module: 
+Xây dựng các thiết kế kiến trúc phần mềm, các module, class, các method, các giao diện, kiểu dữ liệu,…
++	Hoạt động xác minh: Đánh giá thiết kế
++	Hoạt động xác nhận: Tạo và xem xét các test case cho từng module, class, method
++	Đầu ra cần có: Các test case, tài liệu thiết kế UML
+Xây dựng phần mềm: 
+Lập trình phần mềm theo các yêu cầu và tài liệu đã có
++	Hoạt động xác minh: Xem xét mã, kiểm tra các trường hợp kiểm tra
++	Hoạt động xác nhận: Tạo các trường hợp kiểm tra chức năng
++	Đầu ra cần có: code, danh sách các trường hợp kiểm tra
+Kiểm thử đơn vị: 
+Kiểm tra các module, method, class đã đạt được các yêu cầu đề ra chưa, các đoạn code đã cho ra kết quả mong muốn hay không
++	Đầu ra cần có: Kết quả của các unit test
+Kiểm thử tích hợp: 
+Kiểm tra kiến trúc đã đạt được các yêu cầu về luồng dữ liệu, mô hình ERD trong tài liệu đặc tả và các các thành phần trong phần mềm có hoạt động với nhau đúng như mong đợi không
++	Đầu ra cần có: Kết quả kiểm thử tích hợp
+Kiểm thử chấp nhận người dùng:
+Thử nghiệm và kiểm tra các yêu cầu theo tài liệu đã đề ra. Xác nhận rằng các yêu cầu về chức năng và phi chức năng đã đáp ứng được với tài liệu và người dùng. Khả năng tương thích với người dùng
++	Đầu ra cần có: Kết quả kiểm tra, ma trận độ bao phủ các yêu cầu của người dùng và tài liệu
+Vận hành và bảo trì: 
+Đưa sản phẩm ra vận hành và bảo trì phần mềm, hệ thống
+Trong đó, giai đoạn kiểm thử sẽ được thực hiện song song với các giai đoạn thiết kế.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.	Công cụ (CASE TOOL) hỗ trợ trong suốt quá trình quản lý công việc
+
+Giai đoạn 	Công cụ 	Diễn giải
+Khởi tạo 	Trello, Cocomo	Quản lý dự án, ước lượng
+Phân tích &
+Thiết kế	Rational Rose, Diagrams, SQL Server 2019	Phân tích, thiết kế phần mềm, quản trị CSDL
+Code	Microsoft visual studio	Lập trình C#
+Kiểm thử 	Quicktest Pro, Nunit	Kiểm thử chức năng, kiểm thử đơn vị
+		
+Bảo trì	Radare2 và ODA	Các công dùng cho dịch ngược thuộc loại disassembler
+	.NET Reflector	Các công cụ dịch ngược thuộc loại decompiler
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PHỤ LỤC PHÂN CÔNG NHIỆM VỤ
+STT	Thành viên	Nhiệm vụ
+1	Đỗ Nguyễn Hoàng Huy	Làm Chương 2
+2	Lê Dương Khánh Việt	Làm Chương 3
+3		
+
+
