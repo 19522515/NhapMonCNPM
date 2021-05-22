@@ -73,6 +73,17 @@
     <Compile Include="Flogin.Designer.cs">
       <DependentUpon>Flogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLiThuVienDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLiThuVienDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Readers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Readers.Designer.cs">
+      <DependentUpon>Readers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +101,9 @@
     </Compile>
     <EmbeddedResource Include="Flogin.resx">
       <DependentUpon>Flogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readers.resx">
+      <DependentUpon>Readers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
@@ -122,6 +136,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QuanLiThuVienDataSet.xsc">
+      <DependentUpon>QuanLiThuVienDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLiThuVienDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLiThuVienDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLiThuVienDataSet.xss">
+      <DependentUpon>QuanLiThuVienDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\thư viện.jpg" />
   </ItemGroup>
   <ItemGroup>

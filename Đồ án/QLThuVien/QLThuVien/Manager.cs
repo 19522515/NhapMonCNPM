@@ -38,5 +38,23 @@ namespace QLThuVien
         {
             this.Close();
         }
+
+        private void quảnLýSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void mộtSốPhímTắtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quảnLýBạnĐộcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Readers f = new Readers(this);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

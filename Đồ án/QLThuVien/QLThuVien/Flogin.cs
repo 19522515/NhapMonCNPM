@@ -27,7 +27,7 @@ namespace QLThuVien
         {
             string TaiKhoan = tb_username.Text;
             string Matkhau = tb_password.Text;
-            if (NhanVienDAO.Instance.Login(TaiKhoan,Matkhau))
+            if (NhanVienDAO.Instance.Login(TaiKhoan, Matkhau))
             {
                 Manager f = new Manager();
                 this.Hide();
@@ -36,7 +36,7 @@ namespace QLThuVien
             }
             else
             {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Thông báo" );
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Thông báo");
             }
         }
 
@@ -46,6 +46,11 @@ namespace QLThuVien
             {
                 e.Cancel = true;
             }
+        }
+
+        private void Flogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

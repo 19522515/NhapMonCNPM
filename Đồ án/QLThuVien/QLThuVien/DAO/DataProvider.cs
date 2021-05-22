@@ -10,7 +10,7 @@ namespace QLThuVien.DAO
 {
     public class DataProvider
     {
-        private string connectionSTR = "Data Source=DESKTOP-0HE3UUV;Initial Catalog=QuanLiThuVien;Integrated Security=True";
+        private string connectionSTR = @"Data Source=LAPTOP-FPI7II6E\SQLEXPRESS;Initial Catalog=QuanLiThuVien;Integrated Security=True";
         private static DataProvider instance;
         private DataProvider() { }
 

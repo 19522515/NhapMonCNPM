@@ -45,26 +45,29 @@ namespace QLThuVien
             // 
             this.panel1.Controls.Add(this.tb_username);
             this.panel1.Controls.Add(this.lbdangnhap);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(16, 15);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 50);
+            this.panel1.Size = new System.Drawing.Size(857, 62);
             this.panel1.TabIndex = 1;
             // 
             // tb_username
             // 
             this.tb_username.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_username.Location = new System.Drawing.Point(202, 12);
+            this.tb_username.Location = new System.Drawing.Point(269, 15);
+            this.tb_username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_username.Name = "tb_username";
-            this.tb_username.Size = new System.Drawing.Size(412, 29);
+            this.tb_username.Size = new System.Drawing.Size(548, 30);
             this.tb_username.TabIndex = 1;
             // 
             // lbdangnhap
             // 
             this.lbdangnhap.AutoSize = true;
             this.lbdangnhap.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbdangnhap.Location = new System.Drawing.Point(13, 12);
+            this.lbdangnhap.Location = new System.Drawing.Point(17, 15);
+            this.lbdangnhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbdangnhap.Name = "lbdangnhap";
-            this.lbdangnhap.Size = new System.Drawing.Size(162, 22);
+            this.lbdangnhap.Size = new System.Drawing.Size(165, 24);
             this.lbdangnhap.TabIndex = 0;
             this.lbdangnhap.Text = "Tên đăng nhập: ";
             // 
@@ -72,17 +75,19 @@ namespace QLThuVien
             // 
             this.panel2.Controls.Add(this.tb_password);
             this.panel2.Controls.Add(this.lbmk);
-            this.panel2.Location = new System.Drawing.Point(12, 68);
+            this.panel2.Location = new System.Drawing.Point(16, 84);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(643, 50);
+            this.panel2.Size = new System.Drawing.Size(857, 62);
             this.panel2.TabIndex = 2;
             // 
             // tb_password
             // 
             this.tb_password.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_password.Location = new System.Drawing.Point(202, 12);
+            this.tb_password.Location = new System.Drawing.Point(269, 15);
+            this.tb_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_password.Name = "tb_password";
-            this.tb_password.Size = new System.Drawing.Size(412, 29);
+            this.tb_password.Size = new System.Drawing.Size(548, 30);
             this.tb_password.TabIndex = 2;
             this.tb_password.UseSystemPasswordChar = true;
             // 
@@ -90,18 +95,20 @@ namespace QLThuVien
             // 
             this.lbmk.AutoSize = true;
             this.lbmk.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbmk.Location = new System.Drawing.Point(16, 12);
+            this.lbmk.Location = new System.Drawing.Point(21, 15);
+            this.lbmk.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbmk.Name = "lbmk";
-            this.lbmk.Size = new System.Drawing.Size(107, 22);
+            this.lbmk.Size = new System.Drawing.Size(110, 24);
             this.lbmk.TabIndex = 0;
             this.lbmk.Text = "Mật khẩu: ";
             // 
             // bt_dangnhap
             // 
             this.bt_dangnhap.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_dangnhap.Location = new System.Drawing.Point(356, 124);
+            this.bt_dangnhap.Location = new System.Drawing.Point(475, 153);
+            this.bt_dangnhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_dangnhap.Name = "bt_dangnhap";
-            this.bt_dangnhap.Size = new System.Drawing.Size(112, 38);
+            this.bt_dangnhap.Size = new System.Drawing.Size(149, 47);
             this.bt_dangnhap.TabIndex = 3;
             this.bt_dangnhap.Text = "Đăng nhập";
             this.bt_dangnhap.UseVisualStyleBackColor = true;
@@ -111,9 +118,10 @@ namespace QLThuVien
             // 
             this.bt_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_exit.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_exit.Location = new System.Drawing.Point(514, 124);
+            this.bt_exit.Location = new System.Drawing.Point(685, 153);
+            this.bt_exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bt_exit.Name = "bt_exit";
-            this.bt_exit.Size = new System.Drawing.Size(112, 38);
+            this.bt_exit.Size = new System.Drawing.Size(149, 47);
             this.bt_exit.TabIndex = 4;
             this.bt_exit.Text = "Thoát";
             this.bt_exit.UseVisualStyleBackColor = true;
@@ -121,17 +129,19 @@ namespace QLThuVien
             // 
             // Flogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 178);
+            this.ClientSize = new System.Drawing.Size(899, 219);
             this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.bt_dangnhap);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Flogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Flogin_FormClosing);
+            this.Load += new System.EventHandler(this.Flogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -152,4 +162,3 @@ namespace QLThuVien
         private System.Windows.Forms.Button bt_exit;
     }
 }
-
