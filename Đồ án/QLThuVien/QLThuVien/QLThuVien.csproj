@@ -64,9 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ReaderDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DTO\NhanVien.cs" />
+    <Compile Include="DTO\Reader.cs" />
     <Compile Include="Flogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,11 +80,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLiThuVienDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Readers.cs">
+    <Compile Include="fReaderManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Readers.Designer.cs">
-      <DependentUpon>Readers.cs</DependentUpon>
+    <Compile Include="fReaderManager.Designer.cs">
+      <DependentUpon>fReaderManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs">
       <SubType>Form</SubType>
@@ -102,8 +104,8 @@
     <EmbeddedResource Include="Flogin.resx">
       <DependentUpon>Flogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Readers.resx">
-      <DependentUpon>Readers.cs</DependentUpon>
+    <EmbeddedResource Include="fReaderManager.resx">
+      <DependentUpon>fReaderManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>

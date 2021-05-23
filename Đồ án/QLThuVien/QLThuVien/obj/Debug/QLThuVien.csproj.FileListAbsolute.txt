@@ -140,4 +140,4 @@ C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\obj\Debug\QLThuVien.c
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\obj\Debug\QLThuVien.csproj.CopyComplete
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\obj\Debug\QLThuVien.exe
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\obj\Debug\QLThuVien.pdb
-C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\obj\Debug\QLThuVien.Readers.resources
+C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\obj\Debug\QLThuVien.fReaderManager.resources

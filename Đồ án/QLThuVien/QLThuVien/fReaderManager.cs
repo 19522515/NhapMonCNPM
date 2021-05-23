@@ -7,25 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLThuVien.DTO;
+using QLThuVien.DAO;
 
 namespace QLThuVien
 {
-    public partial class Readers : Form
+    public partial class fReaderManager : Form
     {
         Manager PreviousForm;
-        public Readers(Manager Previous)
+        public fReaderManager(Manager Previous)
         {
             InitializeComponent();
             PreviousForm = Previous;
-            LoadListView();
             /*Rectangle screen = Screen.FromControl(this).Bounds;
             Width = screen.Width;
             Height = screen.Height; */
+            this.Size = new Size(1710, 800);
+            //WindowState = FormWindowState.Minimized;
+            LoadReader();
         }
-        void LoadListView()
+        #region Method
+        void LoadReader()
         {
-  
+            List<Reader> readerList = ReaderDAO.Instance.LoadReaderList();
+            foreach (Reader item in readerList)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.ID.ToString());
+                lsvItem.SubItems.Add(item.Name.ToString());
+                lsvItem.SubItems.Add(item.Address.ToString());
+                lsvItem.SubItems.Add(item.Email.ToString());
+                lsvItem.SubItems.Add(item.Job.ToString());
+                lsvItem.SubItems.Add(item.Birthday.ToString());
+                //lsvItem.SubItems.Add(item.Gender.ToString());
+                lsvItem.SubItems.Add(item.PhoneNumber.ToString());
+                lsvReader.Items.Add(lsvItem);
+            }
         }
+        #endregion
         private void button1_Click(object sender, EventArgs e)
         {
             PreviousForm.Show();
@@ -64,7 +82,7 @@ namespace QLThuVien
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -99,7 +117,7 @@ namespace QLThuVien
 
         private void label5_Click(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -178,6 +196,7 @@ namespace QLThuVien
 
         private void label10_Click(object sender, EventArgs e)
         {
+
 
         }
     }

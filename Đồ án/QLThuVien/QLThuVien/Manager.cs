@@ -51,7 +51,7 @@ namespace QLThuVien
 
         private void quảnLýBạnĐộcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Readers f = new Readers(this);
+            fReaderManager f = new fReaderManager(this);
             this.Hide();
             f.ShowDialog();
             this.Show();
