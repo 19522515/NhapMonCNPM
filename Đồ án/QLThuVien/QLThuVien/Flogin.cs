@@ -1,4 +1,5 @@
 ﻿using QLThuVien.DAO;
+using QLThuVien.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +30,8 @@ namespace QLThuVien
             string Matkhau = tb_password.Text;
             if (NhanVienDAO.Instance.Login(TaiKhoan,Matkhau))
             {
-                Manager f = new Manager();
+                NhanVien acc = NhanVienDAO.Instance.GetNhanVienByTaiKhoan(TaiKhoan);
+                Manager f = new Manager(acc);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
@@ -46,6 +48,11 @@ namespace QLThuVien
             {
                 e.Cancel = true;
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
