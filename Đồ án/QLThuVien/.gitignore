@@ -1,0 +1,10 @@
+packages/
+.vs/
+QLThuVien.sln
+QLThuVien/*.xsc
+QLThuVien/*.xsd
+QLThuVien/*.xss
+QLThuVien/QuanLiThuVienDataSet.Designer.cs
+QLThuVien/SqlServerTypes/
+bin/
+Properties/

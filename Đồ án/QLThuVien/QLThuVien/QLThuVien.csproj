@@ -64,14 +64,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ReaderDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DTO\NhanVien.cs" />
+    <Compile Include="DTO\Reader.cs" />
     <Compile Include="Flogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Flogin.Designer.cs">
       <DependentUpon>Flogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiThuVienDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLiThuVienDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="fReaderManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fReaderManager.Designer.cs">
+      <DependentUpon>fReaderManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager.cs">
       <SubType>Form</SubType>
@@ -81,11 +94,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLCAFEDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLCAFEDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThongTinTaiKhoan.cs">
       <SubType>Form</SubType>
@@ -95,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="Flogin.resx">
       <DependentUpon>Flogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fReaderManager.resx">
+      <DependentUpon>fReaderManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager.resx">
       <DependentUpon>Manager.cs</DependentUpon>
@@ -127,16 +138,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="QLCAFEDataSet.xsc">
-      <DependentUpon>QLCAFEDataSet.xsd</DependentUpon>
+    <None Include="QuanLiThuVienDataSet.xsc">
+      <DependentUpon>QuanLiThuVienDataSet.xsd</DependentUpon>
     </None>
-    <None Include="QLCAFEDataSet.xsd">
+    <None Include="QuanLiThuVienDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLCAFEDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>QuanLiThuVienDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="QLCAFEDataSet.xss">
-      <DependentUpon>QLCAFEDataSet.xsd</DependentUpon>
+    <None Include="QuanLiThuVienDataSet.xss">
+      <DependentUpon>QuanLiThuVienDataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\thư viện.jpg" />
   </ItemGroup>

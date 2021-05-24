@@ -65,5 +65,13 @@ namespace QLThuVien
         {
             
         }
+
+        private void quảnLýBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fReaderManager f = new fReaderManager(this);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

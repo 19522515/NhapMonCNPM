@@ -10,7 +10,7 @@ namespace QLThuVien.DAO
 {
     public class DataProvider
     {
-        private string connectionSTR = "Data Source=DESKTOP-0HE3UUV;Initial Catalog=QuanLiThuVien;Integrated Security=True";
+        private string connectionSTR = @"Data Source=LAPTOP-FPI7II6E\SQLEXPRESS;Initial Catalog=QuanLiThuVien;Integrated Security=True";
         private static DataProvider instance;
         private DataProvider() { }
 
@@ -28,7 +28,7 @@ namespace QLThuVien.DAO
             }
             private set => instance = value;
         }
-
+        // use for search
         public DataSet ExecuteQuery(string query, object[] parameter = null)
         {
             DataSet data = new DataSet();
@@ -56,7 +56,7 @@ namespace QLThuVien.DAO
             return data;
 
         }
-
+        // use for insert, update and delete
         public int ExecutenonQuery(string query, object[] parameter = null)
         {
             int data = 0;
