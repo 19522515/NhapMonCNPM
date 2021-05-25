@@ -37,5 +37,24 @@ namespace QLThuVien.DAO
                 }
                 return readerList;
         }
+        public int GetLastIDNumber()
+        {
+            // if databse has ids
+            try
+            {
+                return (int)DataProvider.Instance.ExecuteScalar("SELECT COUNT(MADOCGIA) FROM DOCGIA");
+            }
+            // else
+            catch
+            {
+                return 1;
+            }
+        }
+        public int InsertReader(string ID, string name, string address, string email, string job,string gender, string phoneNumber, DateTime birthday)
+        {
+            int result = DataProvider.Instance.ExecutenonQuery("USP_AddReader @ID , @TEN , @DIACHI , @EMAIL , @CONGVIEC , @NGAYSINH , @GIOITINH , @SDT", new object[] { ID, name, address, email, job, birthday, gender, phoneNumber });
+            return result;
+        }
+
     }
 }

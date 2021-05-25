@@ -30,7 +30,6 @@ namespace QLThuVien
         private void InitializeComponent()
         {
             this.btnBack = new System.Windows.Forms.Button();
-            this.quanLiThuVienDataSet1 = new QLThuVien.QuanLiThuVienDataSet();
             this.labelHeading = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgvReader = new System.Windows.Forms.DataGridView();
@@ -39,6 +38,7 @@ namespace QLThuVien
             this.btnEdit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dtpBirdthday = new System.Windows.Forms.DateTimePicker();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.txbPhoneNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,20 +50,20 @@ namespace QLThuVien
             this.txbJob = new System.Windows.Forms.TextBox();
             this.txbAddress = new System.Windows.Forms.TextBox();
             this.txbID = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbBirthday = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbID = new System.Windows.Forms.Label();
             this.labelCard = new System.Windows.Forms.Label();
-            this.dtpBirdthday = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLiThuVienDataSet1)).BeginInit();
+            this.quanLiThuVienDataSet1 = new QLThuVien.QuanLiThuVienDataSet();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvReader)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiThuVienDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -76,11 +76,6 @@ namespace QLThuVien
             this.btnBack.Text = "Quay lại";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // quanLiThuVienDataSet1
-            // 
-            this.quanLiThuVienDataSet1.DataSetName = "QuanLiThuVienDataSet";
-            this.quanLiThuVienDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelHeading
             // 
@@ -130,6 +125,7 @@ namespace QLThuVien
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDelete
             // 
@@ -177,18 +173,28 @@ namespace QLThuVien
             this.panel3.Controls.Add(this.txbJob);
             this.panel3.Controls.Add(this.txbAddress);
             this.panel3.Controls.Add(this.txbID);
-            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.lbBirthday);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.lbID);
             this.panel3.Location = new System.Drawing.Point(3, 74);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(629, 545);
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // dtpBirdthday
+            // 
+            this.dtpBirdthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirdthday.Location = new System.Drawing.Point(483, 19);
+            this.dtpBirdthday.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpBirdthday.Name = "dtpBirdthday";
+            this.dtpBirdthday.Size = new System.Drawing.Size(122, 22);
+            this.dtpBirdthday.TabIndex = 4;
+            this.dtpBirdthday.ValueChanged += new System.EventHandler(this.dtpBirdthday_ValueChanged);
             // 
             // cbGender
             // 
@@ -199,7 +205,7 @@ namespace QLThuVien
             "KHAC"});
             this.cbGender.Location = new System.Drawing.Point(129, 112);
             this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(121, 24);
+            this.cbGender.Size = new System.Drawing.Size(157, 24);
             this.cbGender.TabIndex = 23;
             this.cbGender.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -290,20 +296,20 @@ namespace QLThuVien
             // 
             this.txbID.Location = new System.Drawing.Point(129, 21);
             this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(86, 22);
+            this.txbID.Size = new System.Drawing.Size(157, 22);
             this.txbID.TabIndex = 11;
             this.txbID.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
-            // label9
+            // lbBirthday
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(259, 21);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 24);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Ngày sinh";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.lbBirthday.AutoSize = true;
+            this.lbBirthday.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBirthday.Location = new System.Drawing.Point(358, 17);
+            this.lbBirthday.Name = "lbBirthday";
+            this.lbBirthday.Size = new System.Drawing.Size(94, 24);
+            this.lbBirthday.TabIndex = 10;
+            this.lbBirthday.Text = "Ngày sinh";
+            this.lbBirthday.Click += new System.EventHandler(this.label9_Click);
             // 
             // label8
             // 
@@ -360,16 +366,16 @@ namespace QLThuVien
             this.label4.Text = "Tên độc giả";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label3
+            // lbID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 24);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Mã độc giả";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lbID.AutoSize = true;
+            this.lbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbID.Location = new System.Drawing.Point(11, 19);
+            this.lbID.Name = "lbID";
+            this.lbID.Size = new System.Drawing.Size(104, 24);
+            this.lbID.TabIndex = 4;
+            this.lbID.Text = "Mã độc giả";
+            this.lbID.Click += new System.EventHandler(this.label3_Click);
             // 
             // labelCard
             // 
@@ -382,12 +388,10 @@ namespace QLThuVien
             this.labelCard.Text = "Thẻ độc giả";
             this.labelCard.Click += new System.EventHandler(this.label2_Click_2);
             // 
-            // dtpBirdthday
+            // quanLiThuVienDataSet1
             // 
-            this.dtpBirdthday.Location = new System.Drawing.Point(359, 21);
-            this.dtpBirdthday.Name = "dtpBirdthday";
-            this.dtpBirdthday.Size = new System.Drawing.Size(246, 22);
-            this.dtpBirdthday.TabIndex = 4;
+            this.quanLiThuVienDataSet1.DataSetName = "QuanLiThuVienDataSet";
+            this.quanLiThuVienDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fReaderManager
             // 
@@ -403,7 +407,6 @@ namespace QLThuVien
             this.Name = "fReaderManager";
             this.Text = "Quản lý bạn đọc";
             this.Load += new System.EventHandler(this.Readers_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.quanLiThuVienDataSet1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvReader)).EndInit();
@@ -411,6 +414,7 @@ namespace QLThuVien
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiThuVienDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,8 +431,8 @@ namespace QLThuVien
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelCard;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbID;
+        private System.Windows.Forms.Label lbBirthday;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;

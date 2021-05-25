@@ -30,7 +30,7 @@ namespace QLThuVien
         void LoadElements()
         {
             LoadReader();
-            AddReaderBinding();
+            LoadBindingData();
             LoadHeading();
         }
         void LoadReader()
@@ -48,7 +48,7 @@ namespace QLThuVien
             dtgvReader.Columns[6].HeaderText = "Số điện thoại";
             dtgvReader.Columns[7].HeaderText = "Ngày sinh";
         }
-        void AddReaderBinding()
+        void LoadBindingData()
         {
             txbID.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "ID"));
             dtpBirdthday.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Birthday"));
@@ -58,6 +58,50 @@ namespace QLThuVien
             txbAddress.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Address"));
             txbPhoneNumber.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "PhoneNumber"));
             cbGender.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Gender"));
+        }
+        void clearBindingData()
+        {
+            txbID.DataBindings.Clear();
+            txbName.DataBindings.Clear();
+            txbEmail.DataBindings.Clear();
+            dtpBirdthday.DataBindings.Clear();
+            txbJob.DataBindings.Clear();
+            txbAddress.DataBindings.Clear();
+            txbPhoneNumber.DataBindings.Clear();
+            cbGender.DataBindings.Clear();
+        }
+        void ClearReaderCard()
+        {
+            clearBindingData();
+            // add auto increment ID
+            int IDNumber = ReaderDAO.Instance.GetLastIDNumber() + 1;
+            string IDPrefix = "";
+            if (IDNumber >0)
+            {
+                IDPrefix = "DG00";
+            } else if (IDNumber >=100)
+            {
+                IDPrefix= "DG0";
+            } else
+            {
+                IDPrefix = "DG";
+            }
+            string ID = IDPrefix + IDNumber.ToString();
+            txbID.Text = ID;
+            txbID.ReadOnly = true;
+            dtpBirdthday.Value = new DateTime(2000,01,01);
+            txbName.Text = "";
+            txbEmail.Text = "";
+            txbJob.Text = "";
+            txbAddress.Text = "";
+            txbPhoneNumber.Text = "";
+            cbGender.Text="Chọn";
+        }
+        void OnAddReader()
+        {
+            int result= ReaderDAO.Instance.InsertReader(txbID.Text, txbName.Text, txbAddress.Text, txbJob.Text, txbEmail.Text, cbGender.Text,txbPhoneNumber.Text, dtpBirdthday.Value);
+            dtgvReader.DataSource= ReaderDAO.Instance.LoadReaderList();
+            ClearReaderCard();
         }
         #endregion
         #region Event
@@ -69,6 +113,11 @@ namespace QLThuVien
         {
             PreviousForm.Show();
             this.Hide();
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txbID.ReadOnly = false;
+            LoadBindingData();
         }
         #endregion
         private void button5_Click(object sender, EventArgs e)
@@ -215,11 +264,7 @@ namespace QLThuVien
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        
         private void label1_Click_2(object sender, EventArgs e)
         {
 
@@ -231,6 +276,24 @@ namespace QLThuVien
         }
 
         private void txbAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txbID.ReadOnly == true)
+            {
+                OnAddReader();
+            }
+            else
+            {
+                labelCard.Text = "Thêm độc giả";
+                ClearReaderCard();
+            }
+        }
+
+        private void dtpBirdthday_ValueChanged(object sender, EventArgs e)
         {
 
         }
