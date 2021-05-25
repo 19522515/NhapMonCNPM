@@ -24,32 +24,53 @@ namespace QLThuVien
             Height = screen.Height; */
             this.Size = new Size(1710, 800);
             //WindowState = FormWindowState.Minimized;
-            LoadReader();
+            LoadElements();
         }
         #region Method
+        void LoadElements()
+        {
+            LoadReader();
+            AddReaderBinding();
+            LoadHeading();
+        }
         void LoadReader()
         {
-            List<Reader> readerList = ReaderDAO.Instance.LoadReaderList();
-            foreach (Reader item in readerList)
-            {
-                ListViewItem lsvItem = new ListViewItem(item.ID.ToString());
-                lsvItem.SubItems.Add(item.Name.ToString());
-                lsvItem.SubItems.Add(item.Address.ToString());
-                lsvItem.SubItems.Add(item.Email.ToString());
-                lsvItem.SubItems.Add(item.Job.ToString());
-                lsvItem.SubItems.Add(item.Birthday.ToString());
-                //lsvItem.SubItems.Add(item.Gender.ToString());
-                lsvItem.SubItems.Add(item.PhoneNumber.ToString());
-                lsvReader.Items.Add(lsvItem);
-            }
+            dtgvReader.DataSource = ReaderDAO.Instance.LoadReaderList();
+        }
+        void LoadHeading()
+        {
+            dtgvReader.Columns[0].HeaderText = "Mã Độc Giả";
+            dtgvReader.Columns[1].HeaderText = "Tên Độc Giả";
+            dtgvReader.Columns[2].HeaderText = "Địa Chỉ";
+            dtgvReader.Columns[3].HeaderText = "Công Việc";
+            dtgvReader.Columns[4].HeaderText = "Email";
+            dtgvReader.Columns[5].HeaderText = "Giới Tính";
+            dtgvReader.Columns[6].HeaderText = "Số điện thoại";
+            dtgvReader.Columns[7].HeaderText = "Ngày sinh";
+        }
+        void AddReaderBinding()
+        {
+            txbID.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "ID"));
+            dtpBirdthday.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Birthday"));
+            txbName.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Name"));
+            txbEmail.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Email"));
+            txbJob.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Job"));
+            txbAddress.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Address"));
+            txbPhoneNumber.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "PhoneNumber"));
+            cbGender.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Gender"));
         }
         #endregion
-        private void button1_Click(object sender, EventArgs e)
+        #region Event
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            
+        }
+            private void button1_Click(object sender, EventArgs e)
         {
             PreviousForm.Show();
             this.Hide();
         }
-
+        #endregion
         private void button5_Click(object sender, EventArgs e)
         {
 
@@ -80,10 +101,7 @@ namespace QLThuVien
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -149,10 +167,7 @@ namespace QLThuVien
 
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -197,6 +212,26 @@ namespace QLThuVien
         private void label10_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbAddress_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

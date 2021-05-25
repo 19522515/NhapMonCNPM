@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLThuVien.DTO;
 
 namespace QLThuVien
 {
@@ -29,7 +30,8 @@ namespace QLThuVien
             string Matkhau = tb_password.Text;
             if (NhanVienDAO.Instance.Login(TaiKhoan, Matkhau))
             {
-                Manager f = new Manager();
+                NhanVien acc = NhanVienDAO.Instance.GetNhanVienByTaiKhoan(TaiKhoan);
+                Manager f = new Manager(acc);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();

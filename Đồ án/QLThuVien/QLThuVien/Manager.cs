@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLThuVien.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,35 @@ namespace QLThuVien
 {
     public partial class Manager : Form
     {
-        public Manager()
+
+        private NhanVien loginaccount;
+
+        public NhanVien Loginaccount
         {
+            get { return loginaccount; }
+            set { loginaccount = value; ChangeAccount(loginaccount.Type1); }
+        }
+        void ChangeAccount(int type)
+        {
+            xemThôngTinTàiKhoảnToolStripMenuItem.Enabled = (type == 1);
+            menustrip_baocaothongke.Enabled = (type == 1);
+            menustrip_hethong.Enabled = (type == 1);
+            
+        }
+        public Manager(NhanVien acc)
+        {
+            this.loginaccount = acc;
             InitializeComponent();
+            ChangeAccount(loginaccount.Type1);
+            
+            
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void xemThôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ThongTinTaiKhoan f = new ThongTinTaiKhoan();
+            ThongTinTaiKhoan f = new ThongTinTaiKhoan(Loginaccount);
             f.Show();
         }
 
@@ -39,22 +56,27 @@ namespace QLThuVien
             this.Close();
         }
 
-        private void quảnLýSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        private void lb_tienich_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tp_bienbansuco_Click(object sender, EventArgs e)
         {
             
         }
 
-        private void mộtSốPhímTắtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void quảnLýBạnĐộcToolStripMenuItem_Click(object sender, EventArgs e)
+        private void quảnLýBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fReaderManager f = new fReaderManager(this);
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void quảnLýSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

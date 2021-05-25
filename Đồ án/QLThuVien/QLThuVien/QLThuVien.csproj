@@ -75,11 +75,7 @@
     <Compile Include="Flogin.Designer.cs">
       <DependentUpon>Flogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiThuVienDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLiThuVienDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="fReaderManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +90,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLiThuVienDataSet1.Designer.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="ThongTinTaiKhoan.cs">
       <SubType>Form</SubType>
@@ -138,17 +135,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="QuanLiThuVienDataSet.xsc">
-      <DependentUpon>QuanLiThuVienDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLiThuVienDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLiThuVienDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QuanLiThuVienDataSet.xss">
-      <DependentUpon>QuanLiThuVienDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\thư viện.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -166,5 +152,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

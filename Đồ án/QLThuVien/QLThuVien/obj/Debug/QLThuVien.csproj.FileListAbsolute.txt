@@ -76,12 +76,6 @@ C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\SqlServerTy
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\QLThuVien.exe.config
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\QLThuVien.exe
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\QLThuVien.pdb
-C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.ReportViewer.Common.dll
-C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
-C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.ReportViewer.Design.dll
-C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
-C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\EnvDTE.dll
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
@@ -141,3 +135,9 @@ C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\obj\Debug\QLThuVien.c
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\obj\Debug\QLThuVien.exe
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\obj\Debug\QLThuVien.pdb
 C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\obj\Debug\QLThuVien.fReaderManager.resources
+C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\SchoolProject\NhapMonCNPM\Đồ án\QLThuVien\QLThuVien\bin\Debug\Microsoft.SqlServer.Types.dll
