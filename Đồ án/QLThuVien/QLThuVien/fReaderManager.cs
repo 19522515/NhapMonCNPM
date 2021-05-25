@@ -45,43 +45,15 @@ namespace QLThuVien
             txbJob.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Job"));
             txbAddress.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Address"));
             txbPhoneNumber.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "PhoneNumber"));
-            //string ID = (string)dtgvReader.SelectedCells[0].OwningRow.Cells["ID"].Value;
-            //LoadSelectedGender(ID);
-        }
-        void LoadSelectedGender(string id)
-        {
-            string gender = ReaderDAO.Instance.GetGenderByID(id);
-            cbGender.SelectedItem = gender;
+            cbGender.DataBindings.Add(new Binding("Text", dtgvReader.DataSource, "Gender"));
         }
         #endregion
         #region Event
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            if (dtgvReader.SelectedCells.Count > 0)
-            {
-                string id = (string)dtgvReader.SelectedCells[0].OwningRow.Cells["ID"].Value;
-                txbBirthday.Text = id;
-                string gender = ReaderDAO.Instance.GetGenderByID(id);
-                cbGender.SelectedItem = gender;
-                int index = -1;
-                int i = 0;
-                foreach (string item in cbGender.Items)
-                {
-                    if (item == gender)
-                    {
-                        index = i;
-                        break;
-                    }
-                    i++;
-                }
-                cbGender.SelectedIndex = index;
-            }
+            
         }
-        /*private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }*/
-        private void button1_Click(object sender, EventArgs e)
+            private void button1_Click(object sender, EventArgs e)
         {
             PreviousForm.Show();
             this.Hide();

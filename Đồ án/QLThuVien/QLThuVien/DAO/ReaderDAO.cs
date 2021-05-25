@@ -50,7 +50,7 @@ namespace QLThuVien.DAO
         }
         public string GetGenderByID(string id)
         {
-            DataSet data = DataProvider.Instance.ExecuteQuery("SELECT GIOITINH FROM DOCGIA WHERE MADOCGIA='" + id+ "'");
+            DataSet data = DataProvider.Instance.ExecuteQuery("SELECT * FROM DOCGIA WHERE MADOCGIA ='"+ id+ "'");
             DataTable datatble = data.Tables[0];
             if (datatble.Rows.Count > 0)
             {
