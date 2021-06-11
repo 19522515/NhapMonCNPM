@@ -29,6 +29,7 @@ namespace QLThuVien
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Flogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_username = new System.Windows.Forms.TextBox();
             this.lbdangnhap = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@ namespace QLThuVien
             this.lbmk = new System.Windows.Forms.Label();
             this.bt_dangnhap = new System.Windows.Forms.Button();
             this.bt_exit = new System.Windows.Forms.Button();
+            this.checkShow = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +49,7 @@ namespace QLThuVien
             this.panel1.Controls.Add(this.lbdangnhap);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(643, 50);
+            this.panel1.Size = new System.Drawing.Size(656, 50);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -75,7 +77,7 @@ namespace QLThuVien
             this.panel2.Controls.Add(this.lbmk);
             this.panel2.Location = new System.Drawing.Point(12, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(643, 50);
+            this.panel2.Size = new System.Drawing.Size(656, 50);
             this.panel2.TabIndex = 2;
             // 
             // tb_password
@@ -100,7 +102,7 @@ namespace QLThuVien
             // bt_dangnhap
             // 
             this.bt_dangnhap.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_dangnhap.Location = new System.Drawing.Point(356, 124);
+            this.bt_dangnhap.Location = new System.Drawing.Point(361, 160);
             this.bt_dangnhap.Name = "bt_dangnhap";
             this.bt_dangnhap.Size = new System.Drawing.Size(112, 38);
             this.bt_dangnhap.TabIndex = 3;
@@ -112,7 +114,7 @@ namespace QLThuVien
             // 
             this.bt_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.bt_exit.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_exit.Location = new System.Drawing.Point(514, 124);
+            this.bt_exit.Location = new System.Drawing.Point(524, 160);
             this.bt_exit.Name = "bt_exit";
             this.bt_exit.Size = new System.Drawing.Size(112, 38);
             this.bt_exit.TabIndex = 4;
@@ -120,15 +122,31 @@ namespace QLThuVien
             this.bt_exit.UseVisualStyleBackColor = true;
             this.bt_exit.Click += new System.EventHandler(this.bt_exit_Click);
             // 
+            // checkShow
+            // 
+            this.checkShow.AutoSize = true;
+            this.checkShow.Font = new System.Drawing.Font("Times New Roman", 10.28571F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkShow.Location = new System.Drawing.Point(493, 124);
+            this.checkShow.Name = "checkShow";
+            this.checkShow.Size = new System.Drawing.Size(133, 23);
+            this.checkShow.TabIndex = 5;
+            this.checkShow.Text = "Hiển thị mật khẩu";
+            this.checkShow.UseVisualStyleBackColor = true;
+            this.checkShow.CheckedChanged += new System.EventHandler(this.checkShow_CheckedChanged);
+            // 
             // Flogin
             // 
+            this.AcceptButton = this.bt_dangnhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 178);
+            this.CancelButton = this.bt_exit;
+            this.ClientSize = new System.Drawing.Size(684, 215);
+            this.Controls.Add(this.checkShow);
             this.Controls.Add(this.bt_exit);
             this.Controls.Add(this.bt_dangnhap);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Flogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
@@ -139,6 +157,7 @@ namespace QLThuVien
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,6 +171,7 @@ namespace QLThuVien
         private System.Windows.Forms.Label lbmk;
         private System.Windows.Forms.Button bt_dangnhap;
         private System.Windows.Forms.Button bt_exit;
+        private System.Windows.Forms.CheckBox checkShow;
     }
 }
 

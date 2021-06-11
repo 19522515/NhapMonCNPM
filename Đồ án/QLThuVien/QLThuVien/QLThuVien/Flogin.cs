@@ -17,6 +17,7 @@ namespace QLThuVien
         public Flogin()
         {
             InitializeComponent();
+            
         }
 
         private void bt_exit_Click(object sender, EventArgs e)
@@ -58,6 +59,18 @@ namespace QLThuVien
         private void Flogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkShow.Checked)
+            {
+                tb_password.UseSystemPasswordChar = false;
+            }    
+            else
+            {
+                tb_password.UseSystemPasswordChar = true;
+            }    
         }
     }
 }

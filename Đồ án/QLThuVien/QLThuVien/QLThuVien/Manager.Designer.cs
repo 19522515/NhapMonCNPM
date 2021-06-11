@@ -34,6 +34,7 @@ namespace QLThuVien
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manager));
             this.menuStrip_manager = new System.Windows.Forms.MenuStrip();
             this.menustrip_hethong = new System.Windows.Forms.ToolStripMenuItem();
             this.xemThôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,6 @@ namespace QLThuVien
             this.quảnLýNhânViênToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.báoCáoThốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quyĐịnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menustrip_motsophimtat = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.tp_timkiem = new System.Windows.Forms.TabPage();
@@ -314,8 +314,7 @@ namespace QLThuVien
             this.menuStrip_manager.ImageScalingSize = new System.Drawing.Size(19, 19);
             this.menuStrip_manager.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menustrip_hethong,
-            this.thủThưToolStripMenuItem,
-            this.menustrip_motsophimtat});
+            this.thủThưToolStripMenuItem});
             this.menuStrip_manager.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_manager.Name = "menuStrip_manager";
             this.menuStrip_manager.Size = new System.Drawing.Size(1902, 30);
@@ -335,14 +334,16 @@ namespace QLThuVien
             // xemThôngTinTàiKhoảnToolStripMenuItem
             // 
             this.xemThôngTinTàiKhoảnToolStripMenuItem.Name = "xemThôngTinTàiKhoảnToolStripMenuItem";
-            this.xemThôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
+            this.xemThôngTinTàiKhoảnToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F3)));
+            this.xemThôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(341, 26);
             this.xemThôngTinTàiKhoảnToolStripMenuItem.Text = "Xem thông tin tài khoản";
             this.xemThôngTinTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.xemThôngTinTàiKhoảnToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
+            this.đăngXuấtToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(341, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -377,12 +378,6 @@ namespace QLThuVien
             this.quyĐịnhToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
             this.quyĐịnhToolStripMenuItem.Text = "Quy định";
             this.quyĐịnhToolStripMenuItem.Click += new System.EventHandler(this.quyĐịnhToolStripMenuItem_Click);
-            // 
-            // menustrip_motsophimtat
-            // 
-            this.menustrip_motsophimtat.Name = "menustrip_motsophimtat";
-            this.menustrip_motsophimtat.Size = new System.Drawing.Size(147, 26);
-            this.menustrip_motsophimtat.Text = "Một số phím tắt";
             // 
             // panel1
             // 
@@ -450,6 +445,7 @@ namespace QLThuVien
             // 
             // dgv_listsach
             // 
+            this.dgv_listsach.AllowUserToAddRows = false;
             this.dgv_listsach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_listsach.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
@@ -627,6 +623,7 @@ namespace QLThuVien
             // 
             // cb_idbookdtbb
             // 
+            this.cb_idbookdtbb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_idbookdtbb.FormattingEnabled = true;
             this.cb_idbookdtbb.Location = new System.Drawing.Point(249, 5);
             this.cb_idbookdtbb.Name = "cb_idbookdtbb";
@@ -699,6 +696,7 @@ namespace QLThuVien
             // 
             // dgv_detailbillborrow
             // 
+            this.dgv_detailbillborrow.AllowUserToAddRows = false;
             this.dgv_detailbillborrow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_detailbillborrow.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -752,6 +750,7 @@ namespace QLThuVien
             // 
             // dgv_billborrow
             // 
+            this.dgv_billborrow.AllowUserToAddRows = false;
             this.dgv_billborrow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_billborrow.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -845,6 +844,7 @@ namespace QLThuVien
             // 
             // cb_idReaderBorrow
             // 
+            this.cb_idReaderBorrow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_idReaderBorrow.FormattingEnabled = true;
             this.cb_idReaderBorrow.Location = new System.Drawing.Point(249, 3);
             this.cb_idReaderBorrow.Name = "cb_idReaderBorrow";
@@ -979,13 +979,13 @@ namespace QLThuVien
             // 
             // cb_idbillborrow_return
             // 
+            this.cb_idbillborrow_return.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_idbillborrow_return.FormattingEnabled = true;
             this.cb_idbillborrow_return.Location = new System.Drawing.Point(249, 5);
             this.cb_idbillborrow_return.Name = "cb_idbillborrow_return";
             this.cb_idbillborrow_return.Size = new System.Drawing.Size(348, 29);
             this.cb_idbillborrow_return.TabIndex = 7;
             this.cb_idbillborrow_return.SelectedIndexChanged += new System.EventHandler(this.cb_idbillborrow_return_SelectedIndexChanged);
-            this.cb_idbillborrow_return.Click += new System.EventHandler(this.cb_idbillborrow_return_Click);
             // 
             // label10
             // 
@@ -1008,6 +1008,7 @@ namespace QLThuVien
             // 
             // cb_idBookreturn
             // 
+            this.cb_idBookreturn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_idBookreturn.FormattingEnabled = true;
             this.cb_idBookreturn.Location = new System.Drawing.Point(249, 3);
             this.cb_idBookreturn.Name = "cb_idBookreturn";
@@ -1081,6 +1082,7 @@ namespace QLThuVien
             // 
             // dgv_detailbillreturn
             // 
+            this.dgv_detailbillreturn.AllowUserToAddRows = false;
             this.dgv_detailbillreturn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_detailbillreturn.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_detailbillreturn.BackgroundColor = System.Drawing.SystemColors.ControlLight;
@@ -1147,6 +1149,7 @@ namespace QLThuVien
             // 
             this.tb_sumfine.Location = new System.Drawing.Point(249, 7);
             this.tb_sumfine.Name = "tb_sumfine";
+            this.tb_sumfine.ReadOnly = true;
             this.tb_sumfine.Size = new System.Drawing.Size(348, 29);
             this.tb_sumfine.TabIndex = 4;
             // 
@@ -1235,6 +1238,7 @@ namespace QLThuVien
             // 
             // cb_idReaderReturn
             // 
+            this.cb_idReaderReturn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_idReaderReturn.FormattingEnabled = true;
             this.cb_idReaderReturn.Location = new System.Drawing.Point(249, 3);
             this.cb_idReaderReturn.Name = "cb_idReaderReturn";
@@ -1253,6 +1257,7 @@ namespace QLThuVien
             // 
             // dgv_billreturn
             // 
+            this.dgv_billreturn.AllowUserToAddRows = false;
             this.dgv_billreturn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_billreturn.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
@@ -1321,6 +1326,7 @@ namespace QLThuVien
             // 
             // dgv_payment
             // 
+            this.dgv_payment.AllowUserToAddRows = false;
             this.dgv_payment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_payment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_payment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1451,6 +1457,7 @@ namespace QLThuVien
             // 
             // cb_idreaderpayment
             // 
+            this.cb_idreaderpayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_idreaderpayment.FormattingEnabled = true;
             this.cb_idreaderpayment.Location = new System.Drawing.Point(249, 3);
             this.cb_idreaderpayment.Name = "cb_idreaderpayment";
@@ -1516,6 +1523,7 @@ namespace QLThuVien
             // 
             // dgv_mnb
             // 
+            this.dgv_mnb.AllowUserToAddRows = false;
             this.dgv_mnb.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_mnb.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_mnb.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1558,6 +1566,7 @@ namespace QLThuVien
             // 
             // cb_author_mnb
             // 
+            this.cb_author_mnb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_author_mnb.FormattingEnabled = true;
             this.cb_author_mnb.Location = new System.Drawing.Point(249, 5);
             this.cb_author_mnb.Name = "cb_author_mnb";
@@ -1618,6 +1627,7 @@ namespace QLThuVien
             // 
             // cb_categorybook_mnb
             // 
+            this.cb_categorybook_mnb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_categorybook_mnb.FormattingEnabled = true;
             this.cb_categorybook_mnb.Location = new System.Drawing.Point(249, 5);
             this.cb_categorybook_mnb.Name = "cb_categorybook_mnb";
@@ -1672,6 +1682,7 @@ namespace QLThuVien
             // 
             // cb_publisher_mnb
             // 
+            this.cb_publisher_mnb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_publisher_mnb.FormattingEnabled = true;
             this.cb_publisher_mnb.Location = new System.Drawing.Point(249, 5);
             this.cb_publisher_mnb.Name = "cb_publisher_mnb";
@@ -1887,6 +1898,7 @@ namespace QLThuVien
             // 
             // dgv_manager_reader
             // 
+            this.dgv_manager_reader.AllowUserToAddRows = false;
             this.dgv_manager_reader.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_manager_reader.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_manager_reader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -2107,6 +2119,7 @@ namespace QLThuVien
             // 
             // cb_work_mnr
             // 
+            this.cb_work_mnr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_work_mnr.FormattingEnabled = true;
             this.cb_work_mnr.Location = new System.Drawing.Point(249, 5);
             this.cb_work_mnr.Name = "cb_work_mnr";
@@ -2253,6 +2266,7 @@ namespace QLThuVien
             this.Controls.Add(this.pn_tienich);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip_manager);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip_manager;
             this.Name = "Manager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2399,7 +2413,6 @@ namespace QLThuVien
         private System.Windows.Forms.ToolStripMenuItem menustrip_hethong;
         private System.Windows.Forms.ToolStripMenuItem xemThôngTinTàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menustrip_motsophimtat;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pn_tienich;
         private System.Windows.Forms.MonthCalendar monthCalendar1;

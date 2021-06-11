@@ -46,54 +46,84 @@ namespace QLThuVien
 
         void InsertStaff()
         {
-            string name = tb_name.Text;
-            DateTime dob = dtp_dob.Value;
-            string address = tb_address.Text;
-            string email = tb_email.Text;
-            string sex = cb_sex.Text;
-            string phone = tb_phone.Text;
-            string account = tb_account.Text;
-            int idper = (cb_permission.SelectedItem as Permission).IdPermission;
-            if (StaffDAO.Instance.InsertStaff(name, dob,address,email,sex,phone,account,idper))
+            if (string.IsNullOrWhiteSpace(tb_name.Text))
             {
-                MessageBox.Show("Thêm nhân viên thành công", "Thông báo");
+                MessageBox.Show("Vui lòng nhập tên nhân viên");
             }
             else
             {
-                MessageBox.Show("Thêm nhân viên không thành công", "Thông báo");
+                string name = tb_name.Text;
+                DateTime dob = dtp_dob.Value;
+                string address = tb_address.Text;
+                string email = tb_email.Text;
+                string sex = cb_sex.Text;
+                string phone = tb_phone.Text;
+                string account = tb_account.Text;
+                int idper = (cb_permission.SelectedItem as Permission).IdPermission;
+                if (StaffDAO.Instance.InsertStaff(name, dob, address, email, sex, phone, account, idper))
+                {
+                    MessageBox.Show("Thêm nhân viên thành công", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm nhân viên không thành công", "Thông báo");
+                } 
             }
         }
         void deletestaff()
         {
-            int idstaff = Convert.ToInt32(tb_idstaff.Text);
-            if(StaffDAO.Instance.DeleteStaff(idstaff))
+            if (string.IsNullOrEmpty(tb_idstaff.Text))
             {
-                MessageBox.Show("Xóa thành công", "Thông báo");
+                MessageBox.Show("Vui lòng chọn nhân viên cần xóa");
             }
             else
             {
-                MessageBox.Show("Xóa không thành công", "Thông báo");
+                int idstaff = Convert.ToInt32(tb_idstaff.Text);
+                if (StaffDAO.Instance.DeleteStaff(idstaff))
+                {
+                    MessageBox.Show("Xóa thành công", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa không thành công", "Thông báo");
+                }
             }
+          
         }
         void updatestaff()
         {
-            int idstaff = Convert.ToInt32(tb_idstaff.Text);
-            string name = tb_name.Text;
-            DateTime dob = dtp_dob.Value;
-            string address = tb_address.Text;
-            string email = tb_email.Text;
-            string sex = cb_sex.Text;
-            string phone = tb_phone.Text;
-            string account = tb_account.Text;
-            int idper = (cb_permission.SelectedItem as Permission).IdPermission;
-            if (StaffDAO.Instance.UpdateStaff(idstaff,name, dob, address, email, sex, phone, account, idper))
+            if (string.IsNullOrEmpty(tb_idstaff.Text))
             {
-                MessageBox.Show("Cập nhật thành công", "Thông báo");
+                MessageBox.Show("Vui lòng chọn nhân viên cần cập nhật");
             }
             else
             {
-                MessageBox.Show("Cập nhật không thành công", "Thông báo");
-            }
+                if (string.IsNullOrWhiteSpace(tb_name.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập tên nhân viên");
+                }
+                else
+                {
+                    int idstaff = Convert.ToInt32(tb_idstaff.Text);
+                    string name = tb_name.Text;
+                    DateTime dob = dtp_dob.Value;
+                    string address = tb_address.Text;
+                    string email = tb_email.Text;
+                    string sex = cb_sex.Text;
+                    string phone = tb_phone.Text;
+                    string account = tb_account.Text;
+                    int idper = (cb_permission.SelectedItem as Permission).IdPermission;
+                    if (StaffDAO.Instance.UpdateStaff(idstaff, name, dob, address, email, sex, phone, account, idper))
+                    {
+                        MessageBox.Show("Cập nhật thành công", "Thông báo");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật không thành công", "Thông báo");
+                    }
+                }
+            }    
+
         }
         
 

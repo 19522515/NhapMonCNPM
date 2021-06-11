@@ -166,24 +166,31 @@ namespace QLThuVien
 
         void InsertDetailBillReturn()
         {
-            int IdBillReturn = Convert.ToInt32(tb_idbillreturn2.Text);
-            if ((cb_idBookreturn.SelectedItem as Book) == null)
+            if (string.IsNullOrEmpty(tb_idbillreturn2.Text))
             {
-                MessageBox.Show("Thêm chi tiết phiếu trả không thành công", "Thông báo");
-                return;
-            }    
-            int IdBook = Convert.ToInt32((cb_idBookreturn.SelectedItem as Book).IdBook);
-            int IdBillBorrow = (cb_idbillborrow_return.SelectedItem as BillBorrow).IdBillBorrow;
-            int fine = Convert.ToInt32((num_fine.Value));
-            
-            if (DetailBillReturnDAO.Instance.InsertDetailBillReturn(IdBillReturn, IdBook, IdBillBorrow, fine))
-            {
-                MessageBox.Show("Thêm chi tiết phiếu trả thành công");
-            }    
+                MessageBox.Show("Vui lòng chọn phiếu trả");
+            }
             else
             {
-                MessageBox.Show("Thêm chi tiết phiếu trả không thành công", "Thông báo");
-            }    
+                int IdBillReturn = Convert.ToInt32(tb_idbillreturn2.Text);
+                if ((cb_idBookreturn.SelectedItem as Book) == null)
+                {
+                    MessageBox.Show("Thêm chi tiết phiếu trả không thành công", "Thông báo");
+                    return;
+                }
+                int IdBook = Convert.ToInt32((cb_idBookreturn.SelectedItem as Book).IdBook);
+                int IdBillBorrow = (cb_idbillborrow_return.SelectedItem as BillBorrow).IdBillBorrow;
+                int fine = Convert.ToInt32((num_fine.Value));
+
+                if (DetailBillReturnDAO.Instance.InsertDetailBillReturn(IdBillReturn, IdBook, IdBillBorrow, fine))
+                {
+                    MessageBox.Show("Thêm chi tiết phiếu trả thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm chi tiết phiếu trả không thành công", "Thông báo");
+                }
+            }
         }
 
        void InsertPayment()
@@ -300,55 +307,71 @@ namespace QLThuVien
         void insertReader()
         {
             string name = tb_namereader_mnr.Text;
-            string address = tb_address_mnr.Text;
-            string email = tb_email_mnr.Text;
-            int idwork = (cb_work_mnr.SelectedItem as Work).IdWork;
-            DateTime dob = Convert.ToDateTime(dtp_bob_mnr.Value.ToString().Substring(0,9));
-            string sex = cb_sex_mnr.Text;
-            string phone = tb_phone_mnr.Text;
-            DateTime datecreate = dtp_datecreate_mnr.Value;
-            int debt = Convert.ToInt32(num_debt.Value);
-            List<ParaMeters> list = ParameterDAO.Instance.GetListParameter();
-            DateTime today = DateTime.Now;
-            int age = Convert.ToInt32(today.Year) - Convert.ToInt32(dob.Year);
-            if (age < list[0].ValueParameter || age > list[1].ValueParameter)
+            if (string.IsNullOrWhiteSpace(name))
             {
-                MessageBox.Show("Độ tuổi không phù hợp");
+                MessageBox.Show("Vui lòng nhập tên độc giả");
             }
             else
             {
-
-                if (ReaderDAO.Instance.InsertReader(name, address, email, idwork, dob, sex, phone, datecreate, debt))
+                string address = tb_address_mnr.Text;
+                string email = tb_email_mnr.Text;
+                int idwork = (cb_work_mnr.SelectedItem as Work).IdWork;
+                DateTime dob = Convert.ToDateTime(dtp_bob_mnr.Value.ToString().Substring(0, 9));
+                string sex = cb_sex_mnr.Text;
+                string phone = tb_phone_mnr.Text;
+                DateTime datecreate = dtp_datecreate_mnr.Value;
+                int debt = Convert.ToInt32(num_debt.Value);
+                List<ParaMeters> list = ParameterDAO.Instance.GetListParameter();
+                DateTime today = DateTime.Now;
+                int age = Convert.ToInt32(today.Year) - Convert.ToInt32(dob.Year);
+                if (age < list[0].ValueParameter || age > list[1].ValueParameter)
                 {
-                    MessageBox.Show("Thêm độc giả thành công", "Thông báo");
+                    MessageBox.Show("Độ tuổi không phù hợp");
                 }
                 else
                 {
-                    MessageBox.Show("Thêm độc giả không thành công", "Thông báo");
+
+                    if (ReaderDAO.Instance.InsertReader(name, address, email, idwork, dob, sex, phone, datecreate, debt))
+                    {
+                        MessageBox.Show("Thêm độc giả thành công", "Thông báo");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm độc giả không thành công", "Thông báo");
+                    }
                 }
             }
         }
 
         void updateReader()
         {
-            int idreader = Convert.ToInt32(tb_idreader_mnr.Text);
-            string name = tb_namereader_mnr.Text;
-            string address = tb_address_mnr.Text;
-            string email = tb_email_mnr.Text;
-            int idwork = (cb_work_mnr.SelectedItem as Work).IdWork;
-            DateTime dob = Convert.ToDateTime(dtp_bob_mnr.Value.ToString().Substring(0, 9));
-            string sex = cb_sex_mnr.Text;
-            string phone = tb_phone_mnr.Text;
-            DateTime datecreate = dtp_datecreate_mnr.Value;
-            int debt = Convert.ToInt32(num_debt.Value);
-
-            if (ReaderDAO.Instance.updateReader(idreader,name, address, email, idwork, dob, sex, phone, datecreate, debt))
+            
+            string idreader = tb_idreader_mnr.Text;
+            if (string.IsNullOrWhiteSpace(idreader))
             {
-                MessageBox.Show("Cập nhật độc giả thành công", "Thông báo");
+                MessageBox.Show("Vui lòng chọn độc giả cần cập nhật");
             }
             else
             {
-                MessageBox.Show("Cập nhật độc giả không thành công", "Thông báo");
+                int idreader2 = Convert.ToInt32(idreader);
+                string name = tb_namereader_mnr.Text;
+                string address = tb_address_mnr.Text;
+                string email = tb_email_mnr.Text;
+                int idwork = (cb_work_mnr.SelectedItem as Work).IdWork;
+                DateTime dob = Convert.ToDateTime(dtp_bob_mnr.Value.ToString().Substring(0, 9));
+                string sex = cb_sex_mnr.Text;
+                string phone = tb_phone_mnr.Text;
+                DateTime datecreate = dtp_datecreate_mnr.Value;
+                int debt = Convert.ToInt32(num_debt.Value);
+
+                if (ReaderDAO.Instance.updateReader(idreader2, name, address, email, idwork, dob, sex, phone, datecreate, debt))
+                {
+                    MessageBox.Show("Cập nhật độc giả thành công", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật độc giả không thành công", "Thông báo");
+                }
             }
         }
         void load_work()
@@ -377,15 +400,22 @@ namespace QLThuVien
 
         void deleteReader()
         {
-            int idreader = Convert.ToInt32(tb_idreader_mnr.Text);
-            if (ReaderDAO.Instance.deleteReader(idreader))
+            if (string.IsNullOrWhiteSpace(tb_idreader_mnr.Text))
             {
-                MessageBox.Show("Xóa độc giả thành công", "Thông báo");
+                MessageBox.Show("Vui lòng chọn độc giả cần xóa");
             }
             else
             {
-                MessageBox.Show("Xóa độc giả không thành công", "Thông báo");
-            }    
+                int idreader = Convert.ToInt32(tb_idreader_mnr.Text);
+                if (ReaderDAO.Instance.deleteReader(idreader))
+                {
+                    MessageBox.Show("Xóa độc giả thành công", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Xóa độc giả không thành công", "Thông báo");
+                }
+            }
         }
 
         void deletedetailbillreturn()
@@ -514,13 +544,14 @@ namespace QLThuVien
         }
 
         private void bt_adddetailBillBorrow_Click(object sender, EventArgs e)
-        {
+        {   
             int idbillborrow = Convert.ToInt32(tb_idBillBorrow2.Text);
             int idbook = (cb_idbookdtbb.SelectedItem as Book).IdBook;
             if (DetailBillBorrowDAO.Instance.InsertDetailBillBorrow(idbook, idbillborrow))
             {
                 MessageBox.Show("Thêm chi tiết phiếu mượn thành công", "Thông báo");
                 Load_dgv_DetailBillBorrowByIdBillBorrow(idbillborrow);
+                LoadCombobox();
             }    
             else
             {
@@ -577,8 +608,29 @@ namespace QLThuVien
                 dtp_datereturn.Value = Convert.ToDateTime(row.Cells[2].Value);
                 load_cb_idbillborrow_return();
                 Load_dgv_detailbillreturn();
+                int idbillreturn = Convert.ToInt32(tb_idbillreturn2.Text);
+                int idbillborrow = (cb_idbillborrow_return.SelectedItem as BillBorrow).IdBillBorrow;
+                DateTime dateborrow = BillBorrowDAO.Instance.GetBillBorrowByIDBillBorrow(idbillborrow).Borrowdate1;
+                DateTime datereturn = BillReturnDAO.Instance.GetBillReturnByIDBillReturn(idbillreturn).Returndate;
+                dateborrow = Convert.ToDateTime(dateborrow.ToString().Substring(0, 9));
+                datereturn = Convert.ToDateTime(datereturn.ToString().Substring(0, 9));
+                TimeSpan a = datereturn - dateborrow;
+                int time = (int)a.TotalMinutes / 1440;
+                List<ParaMeters> list = ParameterDAO.Instance.GetListParameter();
+                if ((time - list[2].ValueParameter) > 0)
+                {
+                    int sum = (time - list[2].ValueParameter) * list[3].ValueParameter;
+                    num_fine.Value = sum;
+                }
+                else
+                {
+                    int sum = 0;
+                    num_fine.Value = sum;
+                }
+
             }
         }
+        
 
         private void quyĐịnhToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -597,29 +649,7 @@ namespace QLThuVien
             
         }
 
-        private void cb_idbillborrow_return_Click(object sender, EventArgs e)
-        {
-            int idbillreturn = Convert.ToInt32(tb_idbillreturn2.Text);
-            int idbillborrow = (cb_idbillborrow_return.SelectedItem as BillBorrow).IdBillBorrow;
-            DateTime dateborrow = BillBorrowDAO.Instance.GetBillBorrowByIDBillBorrow(idbillborrow).Borrowdate1;
-            DateTime datereturn = BillReturnDAO.Instance.GetBillReturnByIDBillReturn(idbillreturn).Returndate;
-            dateborrow = Convert.ToDateTime(dateborrow.ToString().Substring(0, 9));
-            datereturn = Convert.ToDateTime(datereturn.ToString().Substring(0, 9));
-            TimeSpan a = datereturn - dateborrow;
-            int time = (int)a.TotalMinutes / 1440;
-            List<ParaMeters> list = ParameterDAO.Instance.GetListParameter();
-            if ((time - list[2].ValueParameter) > 0)
-            {
-                int sum = (time - list[2].ValueParameter) * list[3].ValueParameter;
-                num_fine.Value = sum;
-            }
-            else
-            {
-                int sum = 0;
-                num_fine.Value = sum;
-            }    
-            
-        }
+        
 
         private void bt_adddetailbillreturn_Click(object sender, EventArgs e)
         {
@@ -629,8 +659,9 @@ namespace QLThuVien
             load_cb_idbillborrow_return();
             int id = (cb_idbillborrow_return.SelectedItem as BillBorrow).IdBillBorrow;
             load_combox_idBookreturn(id);
-            Load_dgv_BillReturn();
+            Load_dgv_BillReturn();            
         }
+
 
         private void dgv_detailbillreturn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -656,6 +687,7 @@ namespace QLThuVien
             InsertPayment();
             Load_dgv_Payment();
             load_dgv_manager_reader();
+            Load_dgv_BillReturn();
         }
 
         private void bt_addbook_Click(object sender, EventArgs e)
@@ -771,5 +803,7 @@ namespace QLThuVien
             f.ShowDialog();
             this.Show();
         }
+
+        
     }
 }
