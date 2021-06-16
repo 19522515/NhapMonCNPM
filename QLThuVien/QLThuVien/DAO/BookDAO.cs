@@ -73,7 +73,7 @@ namespace QLThuVien.DAO
         public List<Book> GetListBookForcombobox()
         {
             List <Book> list = new List<Book>();
-            string query = "SELECT * FROM SACH where mahientrang = 2";
+            string query = "SELECT masach,CAST(masach as nvarchar(100)) + ' ' +  tensach as tensach, ngayxuatban, ngaythemsach, giatri, isbn, matheloaisach, manhaxuatban,mahientrang FROM SACH where mahientrang = 2";
             DataTable data = DataProvider.Instance.ExecuteQuery(query).Tables[0];
             foreach(DataRow item in data.Rows)
             {

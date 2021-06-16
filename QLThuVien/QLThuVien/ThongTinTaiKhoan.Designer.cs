@@ -29,6 +29,7 @@ namespace QLThuVien
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinTaiKhoan));
             this.pn_manv = new System.Windows.Forms.Panel();
             this.lb_manv = new System.Windows.Forms.Label();
             this.tb_manv = new System.Windows.Forms.TextBox();
@@ -360,6 +361,7 @@ namespace QLThuVien
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pn_manv);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ThongTinTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThongTinTaiKhoan";

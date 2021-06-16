@@ -30,6 +30,7 @@ namespace QLThuVien
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FManagerStaff));
             this.panel48 = new System.Windows.Forms.Panel();
             this.panel58 = new System.Windows.Forms.Panel();
             this.cb_permission = new System.Windows.Forms.ComboBox();
@@ -411,6 +412,7 @@ namespace QLThuVien
             this.ClientSize = new System.Drawing.Size(1582, 755);
             this.Controls.Add(this.dgv_staff);
             this.Controls.Add(this.panel48);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FManagerStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân viên";

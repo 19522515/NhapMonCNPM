@@ -636,9 +636,9 @@ namespace QLThuVien
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label21.Location = new System.Drawing.Point(21, 10);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(84, 24);
+            this.label21.Size = new System.Drawing.Size(56, 24);
             this.label21.TabIndex = 3;
-            this.label21.Text = "Mã sách:";
+            this.label21.Text = "Sách:";
             // 
             // panel25
             // 
@@ -857,9 +857,9 @@ namespace QLThuVien
             this.label17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label17.Location = new System.Drawing.Point(21, 10);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(107, 24);
+            this.label17.Size = new System.Drawing.Size(80, 24);
             this.label17.TabIndex = 3;
-            this.label17.Text = "Mã độc giả:";
+            this.label17.Text = "Độc giả:";
             // 
             // panel22
             // 
@@ -1022,9 +1022,9 @@ namespace QLThuVien
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Location = new System.Drawing.Point(21, 10);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 24);
+            this.label11.Size = new System.Drawing.Size(56, 24);
             this.label11.TabIndex = 3;
-            this.label11.Text = "Mã sách:";
+            this.label11.Text = "Sách:";
             // 
             // panel15
             // 
@@ -1251,9 +1251,9 @@ namespace QLThuVien
             this.label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label9.Location = new System.Drawing.Point(21, 10);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 24);
+            this.label9.Size = new System.Drawing.Size(80, 24);
             this.label9.TabIndex = 3;
-            this.label9.Text = "Mã độc giả:";
+            this.label9.Text = "Độc giả:";
             // 
             // dgv_billreturn
             // 
@@ -1470,9 +1470,9 @@ namespace QLThuVien
             this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label28.Location = new System.Drawing.Point(21, 10);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(107, 24);
+            this.label28.Size = new System.Drawing.Size(80, 24);
             this.label28.TabIndex = 3;
-            this.label28.Text = "Mã độc giả:";
+            this.label28.Text = "Độc giả:";
             // 
             // panel36
             // 

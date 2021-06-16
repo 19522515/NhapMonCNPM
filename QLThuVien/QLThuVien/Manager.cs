@@ -45,16 +45,17 @@ namespace QLThuVien
         void LoadCombobox()
         {            
             cb_idReaderBorrow.DataSource = ReaderDAO.Instance.GetListReader();
-            cb_idReaderBorrow.DisplayMember = "IdReader";
+            cb_idReaderBorrow.DisplayMember = "NAMEREADER";
+            
             
             cb_idbookdtbb.DataSource = BookDAO.Instance.GetListBookForcombobox();
-            cb_idbookdtbb.DisplayMember = "idBook";
+            cb_idbookdtbb.DisplayMember = "namebook";
 
             cb_idReaderReturn.DataSource = ReaderDAO.Instance.GetListReaderFromBillBorrow();
-            cb_idReaderReturn.DisplayMember = "IdReader";
+            cb_idReaderReturn.DisplayMember = "NAMEREADER";
 
             cb_idreaderpayment.DataSource = ReaderDAO.Instance.GetListReader();
-            cb_idreaderpayment.DisplayMember = "idreader";
+            cb_idreaderpayment.DisplayMember = "NAMEREADER";
 
             tb_idstaff.Text = loginaccount.IdStaff.ToString();
         }
@@ -62,7 +63,7 @@ namespace QLThuVien
         void load_combox_idBookreturn(int id)
         {
             cb_idBookreturn.DataSource = BookDAO.Instance.GetListBookForComboboxDetailBillReturn(id);
-            cb_idBookreturn.DisplayMember = "idBook";
+            cb_idBookreturn.DisplayMember = "NAMEBOOK";
         }
 
         void load_dgvbillborrow()
@@ -665,7 +666,8 @@ namespace QLThuVien
             load_cb_idbillborrow_return();
             int id = (cb_idbillborrow_return.SelectedItem as BillBorrow).IdBillBorrow;
             load_combox_idBookreturn(id);
-            Load_dgv_BillReturn();            
+            Load_dgv_BillReturn();
+            
         }
 
 
