@@ -216,7 +216,7 @@ namespace QLThuVien
 
             if (MoneyPayment> Debt)
             {
-                MessageBox.Show("Số tiền thanh toán không được lớn hơn số tiền độc giả đang nợ", "Thông báo");
+                MessageBox.Show("Số tiền thanh toán phải bé hơn số tiền độc giả đang nợ", "Thông báo");
             }    
             else
             {
@@ -380,8 +380,15 @@ namespace QLThuVien
                 string phone = tb_phone_mnr.Text;
                 DateTime datecreate = dtp_datecreate_mnr.Value;
                 int debt = Convert.ToInt32(num_debt.Value);
-
-                if (ReaderDAO.Instance.updateReader(idreader2, name, address, email, idwork, dob, sex, phone, datecreate, debt))
+                List<ParaMeters> list = ParameterDAO.Instance.GetListParameter();
+                DateTime today = DateTime.Now;
+                int age = Convert.ToInt32(today.Year) - Convert.ToInt32(dob.Year);
+                if (age < list[0].ValueParameter || age > list[1].ValueParameter)
+                {
+                    MessageBox.Show("Độ tuổi độc giả không phù hợp");
+                }
+                else
+                    if (ReaderDAO.Instance.updateReader(idreader2, name, address, email, idwork, dob, sex, phone, datecreate, debt))
                 {
                     MessageBox.Show("Cập nhật độc giả thành công", "Thông báo");
                 }
@@ -553,10 +560,12 @@ namespace QLThuVien
                 DataGridViewRow row = dgv_billborrow.Rows[e.RowIndex];
                 tb_idBillBorrow2.Text = row.Cells[0].Value.ToString();
                 tb_idbillBorrow.Text = row.Cells[0].Value.ToString();
-                cb_idReaderBorrow.Text = row.Cells[2].Value.ToString();
+                int index = cb_idReaderBorrow.FindString(row.Cells[2].Value.ToString());
+                cb_idReaderBorrow.SelectedIndex = index;              
                 dtp_borrow.Value = Convert.ToDateTime(row.Cells[1].Value);
                 int id = Convert.ToInt32(row.Cells[0].Value);
                 Load_dgv_DetailBillBorrowByIdBillBorrow(id);
+               
             }
         }
 
@@ -620,11 +629,13 @@ namespace QLThuVien
                 DataGridViewRow row = dgv_billreturn.Rows[e.RowIndex];
                 tb_idBillReturn.Text = row.Cells[0].Value.ToString();
                 tb_sumfine.Text = row.Cells[3].Value.ToString();
-                cb_idReaderReturn.Text = row.Cells[1].Value.ToString();
+                int index = cb_idReaderReturn.FindString(row.Cells[1].Value.ToString());
+                cb_idReaderReturn.SelectedIndex = index;
                 tb_idbillreturn2.Text = row.Cells[0].Value.ToString();
                 dtp_datereturn.Value = Convert.ToDateTime(row.Cells[2].Value);
                 load_cb_idbillborrow_return();
                 Load_dgv_detailbillreturn();
+                
                 int idbillreturn = Convert.ToInt32(tb_idbillreturn2.Text);
                 int idbillborrow = (cb_idbillborrow_return.SelectedItem as BillBorrow).IdBillBorrow;
                 DateTime dateborrow = BillBorrowDAO.Instance.GetBillBorrowByIDBillBorrow(idbillborrow).Borrowdate1;
@@ -677,6 +688,7 @@ namespace QLThuVien
             int id = (cb_idbillborrow_return.SelectedItem as BillBorrow).IdBillBorrow;
             load_combox_idBookreturn(id);
             Load_dgv_BillReturn();
+            load_dgv_manager_reader();
             
         }
 
