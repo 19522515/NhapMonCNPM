@@ -264,13 +264,20 @@ namespace QLThuVien
             int idcate = (cb_categorybook_mnb.SelectedItem as Category).IdCategory;
             int idpu = (cb_publisher_mnb.SelectedItem as Publisher).IdPublisher;
             int idauthor = (cb_author_mnb.SelectedItem as Author).IdAuthor;
-            if (BookDAO.Instance.InsertBook(namebook, datepub, dateadd, value, ISBN, idcate, idpu, idauthor))
+            if (String.IsNullOrWhiteSpace(namebook))
             {
-                MessageBox.Show("Thêm sách thành công", "Thông báo");
-            }
+                MessageBox.Show("Vui lòng nhập tên sách");
+            } 
             else
             {
-                MessageBox.Show("Thêm sách không thành công", "Thông báo");
+                if (BookDAO.Instance.InsertBook(namebook, datepub, dateadd, value, ISBN, idcate, idpu, idauthor))
+                {
+                    MessageBox.Show("Thêm sách thành công", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm sách không thành công", "Thông báo");
+                }
             }    
         }
         void load_dgv_mnb()
