@@ -83,6 +83,7 @@ namespace QLThuVien.DAO
         }
         public bool DeleteStaff(int idstaff)
         {
+           
             string query = string.Format("EXEC DELETESTAFF @IDSTAFF = "+ idstaff);
             int data = DataProvider.Instance.ExecutenonQuery(query);
             return data > 0;

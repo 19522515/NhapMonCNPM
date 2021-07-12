@@ -294,7 +294,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tỷ lệ</Value>
+                              <Value>Tỷ lệ (%)</Value>
                               <Style>
                                 <FontFamily>Times New Roman</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -414,9 +414,7 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!tyle.Value</Value>
-                              <Style>
-                                <Format>0.00 %</Format>
-                              </Style>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style>

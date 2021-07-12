@@ -140,17 +140,35 @@ namespace QLThuVien
         }
         void InsertBillReturn()
         {
+
             DateTime datereturn = Convert.ToDateTime(dtp_datereturn.Value);
-            int idreader = (cb_idReaderReturn.SelectedItem as Reader).IdReader;
-            bool result = BillReturnDAO.Instance.InsertBillReturn(idreader, datereturn);
-            if (result)
+            int idreader;
+            try
             {
-                MessageBox.Show("Thêm phiếu trả thành công", "Thông báo");
+                throw new Exception();
+                idreader = (cb_idReaderReturn.SelectedItem as Reader).IdReader;
+                bool result = BillReturnDAO.Instance.InsertBillReturn(idreader, datereturn);
+                if (result)
+                {
+                    MessageBox.Show("Thêm phiếu trả thành công", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Thêm phiếu trả không thành công", "Thông báo");
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Thêm phiếu trả không thành công", "Thông báo");
+                MessageBox.Show("Vui lòng chọn độc giả");           
+               
             }
+           
+
+                    
+            
+            
+            
+            
         }
 
         void Load_dgv_detailbillreturn()
@@ -751,10 +769,13 @@ namespace QLThuVien
 
         private void bt_deletebook_Click(object sender, EventArgs e)
         {
-            delBook();
-            load_dgv_mnb();
-            LoadCombobox();
-            
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa cuốn sách này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+            {
+               
+                delBook();
+                load_dgv_mnb();
+                LoadCombobox();
+            }
         }
 
         private void bt_updatebook_Click(object sender, EventArgs e)

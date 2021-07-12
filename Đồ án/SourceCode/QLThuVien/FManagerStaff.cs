@@ -15,6 +15,13 @@ namespace QLThuVien
     public partial class FManagerStaff : Form
     {
         private Staff loginaccount;
+        
+        public Staff Loginaccount
+        {
+            get { return loginaccount; }
+            set { loginaccount = value;  }
+        }
+        private int Idstaff;
         public FManagerStaff(Staff loginaccount)
         {
             InitializeComponent();
@@ -23,8 +30,10 @@ namespace QLThuVien
             cb_permission.DisplayMember = "namePermission";
             DateTime date1 = new DateTime(2000, 1, 1);
             dtp_dob.Value = date1;
-
-        }
+            Idstaff = loginaccount.IdStaff;
+        }        
+      
+         
 
         void load_dgv()
         {
@@ -88,14 +97,22 @@ namespace QLThuVien
             }
             else
             {
+                
                 int idstaff = Convert.ToInt32(tb_idstaff.Text);
-                if (StaffDAO.Instance.DeleteStaff(idstaff))
+                if (Idstaff == idstaff)
                 {
-                    MessageBox.Show("Xóa thành công", "Thông báo");
+                    MessageBox.Show("Xóa không thành công", "Thông báo");
                 }
                 else
                 {
-                    MessageBox.Show("Xóa không thành công", "Thông báo");
+                    if (StaffDAO.Instance.DeleteStaff(idstaff))
+                    {
+                        MessageBox.Show("Xóa thành công", "Thông báo");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công", "Thông báo");
+                    }
                 }
             }
           
@@ -151,8 +168,12 @@ namespace QLThuVien
 
         private void bt_del_mnr_Click(object sender, EventArgs e)
         {
-            deletestaff();
-            load_dgv();
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.OK)
+            {
+
+                deletestaff();
+                load_dgv();
+            }
         }
 
         private void dgv_staff_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -25,8 +25,16 @@ namespace QLThuVien
             
             DateTime datefrom = dtp_from.Value;
             DateTime dateto = dtp_to.Value;
-            this.REPORTBOOKUNRETURNTableAdapter.Fill(this.ManagerBook.REPORTBOOKUNRETURN, datefrom, dateto);
-          this.reportViewer1.RefreshReport();
+            TimeSpan timea = dateto - datefrom;
+            if (Convert.ToInt32(timea.Days) < 0)
+            {
+                MessageBox.Show("Ngày không hợp lệ!");
+            }
+            else
+            {
+                this.REPORTBOOKUNRETURNTableAdapter.Fill(this.ManagerBook.REPORTBOOKUNRETURN, datefrom, dateto);
+                this.reportViewer1.RefreshReport();
+            }
          
         }
         void load_datetime()

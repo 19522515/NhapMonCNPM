@@ -211,6 +211,10 @@
     <None Include="Resources\ảnh 1.jpg" />
     <None Include="Resources\ảnh 3.jpg" />
     <None Include="Resources\UIT_logo.png" />
+    <None Include="Resources\tải xuống.png" />
+    <None Include="Resources\tải xuống %282%29.png" />
+    <None Include="Resources\tải xuống %281%29.png" />
+    <None Include="Resources\tải xuống %283%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

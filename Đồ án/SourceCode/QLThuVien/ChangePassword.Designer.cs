@@ -29,6 +29,7 @@ namespace QLThuVien
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FChangePassword));
             this.panel1 = new System.Windows.Forms.Panel();
             this.tb_pass = new System.Windows.Forms.TextBox();
             this.lbdangnhap = new System.Windows.Forms.Label();
@@ -160,6 +161,7 @@ namespace QLThuVien
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FChangePassword";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi Mật Khẩu";
