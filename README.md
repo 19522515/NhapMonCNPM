@@ -9,6 +9,11 @@ Nhóm gồm 4 thành viên:
   # MÔ TẢ SƠ LƯỢC DỰ ÁN:
 - Nhằm nâng cao chất lượng dịch vụ của các thư viện, đồng thời mong muốn hỗ trợ cho việc quản lý của thủ thư trở nên dễ dàng và thuận tiện hơn, nhóm đã chọn đề tài cho dự án là phần mềm Quản Lý Thư Viện.
 - Phần mềm hỗ trợ các chức năng chính:
-  + Quản lý bạn đọc.
-  + Quản lý đầu sách.
-  + Xử lý yêu cầu mượn/trả sách và các vấn đề phát sinh.
+  + Quản lý độc giả.
+  + Quản lý sách.
+  + Quản lý nhân viên.
+  + Chức năng đăng nhập và phân quyền, đổi mật khẩu.
+  + Xử lý yêu cầu mượn/trả sách và vấn đề thanh toán.
+  + Tra cứu thông tin sách, thông tin tài khoản.
+  + Thay đổi quy định.
+  + Lập báo cáo thống kê tình hình mượn sách theo thể loại.
